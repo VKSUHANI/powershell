@@ -1,0 +1,17 @@
+# 🔧 Set the parent directory path
+$parentDir = "C:\Your\Directory\Path"
+
+# 📄 Output text file location
+$outputFile = "C:\Your\Output\SortedFiles.txt"
+
+# 🧮 Get all files (recursively), sort by creation time (newest first)
+$files = Get-ChildItem -Path $parentDir -Recurse -File | 
+         Sort-Object CreationTime -Descending
+
+# 💾 Save file details to text file
+$files | ForEach-Object {
+    "$($_.FullName) - Created on: $($_.CreationTime)" 
+} | Out-File -FilePath $outputFile -Encoding UTF8
+
+# ✅ Done
+Write-Host "Saved sorted file list to $outputFile"
