@@ -1,7 +1,7 @@
 # Script to Delete Files Modified Within the Last 1000 Days
 
 # Get all files and directories from the specified path recursively, including hidden and system files
-$files = Get-ChildItem -Path "C:\Users\suhan\OneDrive\Documents\Labs" -Recurse -Force 
+$files = Get-ChildItem -Path "C:\Users\suhan\OneDrive\Documents\azure" -Recurse -Force 
 
 # Define the path to the text file where filtered file paths will be stored temporarily
 $text = "C:\Users\suhan\OneDrive\Documents\text.txt"
