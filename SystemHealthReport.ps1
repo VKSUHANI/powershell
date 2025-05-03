@@ -13,3 +13,4 @@ $cpu|out-file -FilePath $file -Append
 $disk=Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DeviceID='C:'"|Select-Object -Property @{Name='Name';Expression={'Disk'}},@{Name='Free Size(GB)'; Expression={"{0:N2}" -f ($_.FreeSpace / 1GB)}}
 
 $disk|out-file -FilePath $file -Append
+~
